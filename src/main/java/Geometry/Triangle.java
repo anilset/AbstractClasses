@@ -1,6 +1,6 @@
 package Geometry;
 
-public class Triangle  implements AreaApplicable {
+public class Triangle implements AreaAndPerimeterCounted {
 
     private double side1;
     private double side2;

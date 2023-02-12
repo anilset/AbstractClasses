@@ -1,24 +1,26 @@
 package Geometry;
 
-public abstract class Parallelogram implements AreaApplicable{
-    protected double height;
-    protected double width;
-    protected double sideLength;
+public abstract class Parallelogram implements AreaAndPerimeterCounted {
+    protected double sideLength1;
+    protected double sideLength2;
 
-    // конструктор параллелограмма принимает на вход оба значения: высоту и ширину
-    protected Parallelogram(double height, double width) {
-        this.height = height;
-        this.width = width;
+    protected Parallelogram(double sideLength1, double sideLength2) {
+        this.sideLength1 = sideLength1;
+        this.sideLength2 = sideLength2;
     }
 
-    protected Parallelogram (double sideLength) {
-        this.sideLength = sideLength;
+    protected Parallelogram (double sideLength1) {
+        this.sideLength1 = sideLength1;
     }
 
     // площадь у любого параллелограмма считается одинаково - перемножением высоты и ширины, поэтому этот метод не абстрактный и имеет реализацию
     @Override
     public double getArea() {
-        return height * width;
+        return sideLength1 * sideLength2;
     }
 
+    @Override
+    public double getPerimeter() {
+        return 2 * (sideLength1 + sideLength2);
+    }
 }
