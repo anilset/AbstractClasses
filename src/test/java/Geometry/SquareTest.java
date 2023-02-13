@@ -9,22 +9,31 @@ public class SquareTest {
     @Parameterized.Parameter
     public double sideLength;
     @Parameterized.Parameter(1)
-    public double expected;
+    public double expectedArea;
+    @Parameterized.Parameter(2)
+    public double expectedPerimeter;
 
-    @Parameterized.Parameters (name = "{index}: Square with side length {0} and area {1}")
-    public static Object[] [] getSquareData() {
+    @Parameterized.Parameters (name = "{index}: Square with side length {0}, area {1} and perimeter {2}")
+    public static Object[] [] getSquareAreaData() {
         return new Object[] [] {
-                {2, 4},
-                {3, 9},
-                {10, 100},
-                {1, 1}
+                {2, 4, 8},
+                {3, 9, 12},
+                {10, 100, 40},
+                {1, 1, 4}
         };
     }
 
     @Test
-    public void squareGetAreaTest() {
+    public void getSquareAreaTest() {
         Parallelogram square = new Square(sideLength);
         double actual = square.getArea();
-        assertEquals(expected, actual, 0.0);
+        assertEquals(expectedArea, actual, 0.0);
+    }
+
+    @Test
+    public void getSquarePerimeterTest() {
+        Parallelogram square = new Square(sideLength);
+        double actual = square.getPerimeter();
+        assertEquals(expectedPerimeter, actual, 0);
     }
 }

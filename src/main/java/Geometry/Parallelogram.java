@@ -1,6 +1,6 @@
 package Geometry;
 
-public abstract class Parallelogram implements AreaAndPerimeterCounted {
+public abstract class Parallelogram implements AreaAndPerimeterCalculated {
     protected double sideLength1;
     protected double sideLength2;
 

@@ -1,9 +1,6 @@
 package Geometry;
-
 import org.junit.Test;
-
 import static org.junit.Assert.*;
-
 public class TriangleTest {
 
     @Test
@@ -19,4 +16,8 @@ public class TriangleTest {
         assertEquals("Wrong max side", 4, triangle.getMaxSide(), 0.0);
     }
 
+    @Test
+    public void confirmExceptionThrowable() {
+        assertThrows(IllegalArgumentException.class, () -> new Triangle(0, 0.1, 1));
+    }
 }

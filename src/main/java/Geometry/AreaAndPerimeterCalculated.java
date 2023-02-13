@@ -1,6 +1,6 @@
 package Geometry;
 
-public interface AreaAndPerimeterCounted {
+public interface AreaAndPerimeterCalculated {
     double getArea();
     double getPerimeter();
 }
